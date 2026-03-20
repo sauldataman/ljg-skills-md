@@ -21,7 +21,7 @@ Workflows chain multiple skills into a single command.
 | Workflow | Skills | Description |
 |----------|--------|-------------|
 | **ljg-paper-flow** | ljg-paper → ljg-card | Reads papers + casts cards in one go |
-| **ljg-word-card** | ljg-word → ljg-card -i | Deep-dive word analysis + infograph card in one go |
+| **ljg-word-flow** | ljg-word → ljg-card -i | Deep-dive word analysis + infograph card in one go |
 
 ## Install
 

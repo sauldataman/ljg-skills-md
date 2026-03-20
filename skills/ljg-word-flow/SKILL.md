@@ -1,11 +1,11 @@
 ---
-name: ljg-word-card
-description: "Word card workflow: deep-dive word analysis + infograph card in one go. Takes one or more English words, runs ljg-word (generates deep semantics analysis) then ljg-card -i (generates infograph PNG). Use when user says '词卡', 'word card', or provides English words wanting both analysis and visual card."
+name: ljg-word-flow
+description: "Word flow: deep-dive word analysis + infograph card in one go. Takes one or more English words, runs ljg-word (generates deep semantics analysis) then ljg-card -i (generates infograph PNG). Use when user says '词卡', 'word card', 'word flow', or provides English words wanting both analysis and visual card."
 user_invocable: true
 version: "1.0.0"
 ---
 
-# ljg-word-card: 词卡
+# ljg-word-flow: 词卡
 
 一条命令完成：解词 → 铸信息图。支持多词并行。
 
@@ -14,8 +14,8 @@ version: "1.0.0"
 直接传入一个或多个英文单词，空格分隔。
 
 ```
-/ljg-word-card Obstacle
-/ljg-word-card Serendipity Resilience Entropy
+/ljg-word-flow Obstacle
+/ljg-word-flow Serendipity Resilience Entropy
 ```
 
 ## 执行
