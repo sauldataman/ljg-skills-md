@@ -10,6 +10,7 @@ My custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | **ljg-paper** | Paper reader — academic paper analysis pipeline |
 | **ljg-paper-flow** | Paper workflow — reads papers + casts cards in one go (combines ljg-paper and ljg-card) |
 | **ljg-plain** | Plain language rewriter — makes complex content accessible |
+| **ljg-x-download** | X media downloader — download images and videos from X/Twitter posts to ~/Downloads |
 | **ljg-skill-map** | Skill map viewer — visual overview of all installed skills |
 | **ljg-word** | English word mastery — deep-dive word deconstruction |
 | **ljg-writes** | Writing engine — think through an idea by writing it out |
