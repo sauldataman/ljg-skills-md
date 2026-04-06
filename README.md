@@ -1,6 +1,8 @@
-# ljg-skills
+# ljg-skills-md
 
-我的 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 自定义技能集。
+LJG's [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 自定义技能集。
+
+此修改版本全部为.MD格式输出（源skill全部为.org格式）
 
 ## 安装
 
