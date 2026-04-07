@@ -2,16 +2,38 @@
 
 我的 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 自定义技能集。
 
+## 输出格式
+
+技能提供两种输出格式，通过不同 branch 安装，功能完全相同：
+
+| Branch | 格式 | 适用场景 |
+|--------|------|----------|
+| `master`（默认） | Org-mode（`.org`） | Emacs / Denote 用户 |
+| `md` | Markdown（`.md`） | Obsidian / VSCode / Notion 等 Markdown 生态用户 |
+
+| 特性 | org-mode (`master`) | Markdown (`md`) |
+|------|---------------------|-----------------|
+| 文件头 | `#+title:` / `#+date:` / `#+filetags:` | YAML frontmatter (`---`) |
+| 标题 | `* H1` / `** H2` | `# H1` / `## H2` |
+| 加粗 | `*bold*` | `**bold**` |
+| 输出文件 | `.org` | `.md` |
+
 ## 安装
 
 使用 [skills CLI](https://github.com/vercel-labs/skills)（基于 `npx`）一行安装：
 
 ```bash
-# 安装全部技能（全局）
+# 安装全部技能（全局，org-mode 格式）
 npx skills add lijigang/ljg-skills -g --all
 
-# 安装单个技能
+# 安装全部技能（Markdown 格式）
+npx skills add lijigang/ljg-skills#md -g --all
+
+# 安装单个技能（org-mode）
 npx skills add lijigang/ljg-skills -g --skill ljg-card
+
+# 安装单个技能（Markdown）
+npx skills add lijigang/ljg-skills#md -g --skill ljg-card
 
 # 安装多个指定技能
 npx skills add lijigang/ljg-skills -g --skill ljg-card --skill ljg-learn
@@ -27,6 +49,7 @@ npx skills add lijigang/ljg-skills -l
 | `-g` | 全局安装到 `~/.claude/skills/`（推荐）。不加则装到当前项目 `.claude/skills/` |
 | `--skill <name>` | 指定安装某个技能，可重复使用 |
 | `--all` | 安装仓库内全部技能 |
+| `#md` | 从 `md` branch 安装 Markdown 格式版本 |
 | `-l` | 仅列出可用技能，不安装 |
 
 ### ljg-card 依赖
@@ -40,7 +63,11 @@ cd ~/.claude/skills/ljg-card && npm install && npx playwright install chromium
 ### 替代方式：git clone
 
 ```bash
+# org-mode 版本
 git clone https://github.com/lijigang/ljg-skills.git ~/.claude/plugins/ljg-skills
+
+# Markdown 版本
+git clone -b md https://github.com/lijigang/ljg-skills.git ~/.claude/plugins/ljg-skills
 ```
 
 ## 技能
@@ -58,7 +85,7 @@ git clone https://github.com/lijigang/ljg-skills.git ~/.claude/plugins/ljg-skill
 | **ljg-invest** | 投资分析 — 核心判断项目是否是一台「秩序创造机器」 |
 | **ljg-relationship** | 关系分析 — 五层结构诊断 + 精神分析，通过对话引导帮用户"看见"关系真实结构 |
 | **ljg-roundtable** | 圆桌讨论 — 求真导向的结构化多人辩证对话，每轮生成 ASCII 思考框架图 |
-| **ljg-travel** | 旅行研究 — 输入城市名，生成深度文化研究文档（org-mode）+ 便携卡片（PNG） |
+| **ljg-travel** | 旅行研究 — 输入城市名，生成深度文化研究文档 + 便携卡片（PNG） |
 | **ljg-skill-map** | 技能地图 — 扫描所有已安装技能，渲染可视化总览 |
 | **ljg-x-download** | X 媒体下载 — 下载 X/Twitter 帖子中的图片和视频 |
 
@@ -68,5 +95,5 @@ git clone https://github.com/lijigang/ljg-skills.git ~/.claude/plugins/ljg-skill
 
 | 工作流 | 技能链 | 说明 |
 |--------|--------|------|
-| **ljg-paper-flow** | ljg-paper → ljg-card -l | 读论文 + 做长图卡片一气呵成 |
+| **ljg-paper-flow** | ljg-paper → ljg-card -c | 读论文 + 做漫画卡片一气呵成 |
 | **ljg-word-flow** | ljg-word → ljg-card -i | 单词深度分析 + 信息图卡片一气呵成 |

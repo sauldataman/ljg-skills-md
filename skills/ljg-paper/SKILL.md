@@ -11,10 +11,10 @@ version: "4.4.0"
 
 ## 格式约束
 
-### Org-mode 语法
+### Markdown 语法
 
-- 加粗用 `*bold*`（单星号），禁止 `**bold**`
-- 标题层级从 `*` 开始，不跳级
+- 加粗用 `**bold**`（双星号）
+- 标题层级从 `#` 开始，不跳级
 
 ### ASCII Art
 
@@ -22,25 +22,27 @@ version: "4.4.0"
 
 ### 模板权威性
 
-输出结构依据 `references/template.org`。禁止参考 `~/Documents/notes/` 中已有论文文件的章节结构——旧文件可能使用过期模板。
+输出结构依据 `references/template.md`。禁止参考 `~/Documents/notes/` 中已有论文文件的章节结构——旧文件可能使用过期模板。
 
 ### Denote 文件规范
 
 - 时间戳：`date +%Y%m%dT%H%M%S`
 - 可读时间：`date "+%Y-%m-%d %a %H:%M"`
-- 文件名：`{时间戳}--paper-{简短标题}__paper.org`
+- 文件名：`{时间戳}--paper-{简短标题}__paper.md`
 - 输出目录：`~/Documents/notes/`
 
-### Org 文件头
+### YAML 文件头
 
 ```
-#+title:      paper-{简短标题}
-#+date:       [{YYYY-MM-DD Day HH:MM}]
-#+filetags:   :paper:
-#+identifier: {YYYYMMDDTHHMMSS}
-#+source:     {URL 或来源描述}
-#+authors:    {作者列表}
-#+venue:      {发表场所/年份}
+---
+title: paper-{简短标题}
+date: {YYYY-MM-DD}
+tags: [paper]
+identifier: {YYYYMMDDTHHMMSS}
+source: {URL 或来源描述}
+authors: {作者列表}
+venue: {发表场所/年份}
+---
 ```
 
 文件写入后报告路径。
@@ -173,9 +175,9 @@ version: "4.4.0"
 
 列修改清单确认后生成文件。
 
-### 9. 生成 Org 文件
+### 9. 生成 Markdown 文件
 
-按 Denote 规范获取时间戳，读 `references/template.org`，写入 `~/Documents/notes/`。
+按 Denote 规范获取时间戳，读 `references/template.md`，写入 `~/Documents/notes/`。
 
 ## 验收
 
